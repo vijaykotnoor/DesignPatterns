@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : SolutionX1.cpp
+// Name        : SolutionX3.cpp
 // Author      : Vijay
 // Version     :
 // Copyright   : Your copyright notice
@@ -7,14 +7,14 @@
 //============================================================================
 
 #include <iostream>
+using namespace std;
+#include "Recipe.h"
 #include "CoffeeReciepe.h"
 #include "TeaRecipe.h"
-using namespace std;
-
 int main() {
 	CoffeeReciepe c;
-	c.makeCoffee();
+	c.makeRecipe();
 	TeaRecipe t;
-	t.makeTea();
+	t.makeRecipe();
 	return 0;
 }
