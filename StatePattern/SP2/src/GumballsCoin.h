@@ -8,8 +8,8 @@
 #ifndef GUMBALLSCOIN_H_
 #define GUMBALLSCOIN_H_
 
-#include <IState.h>
-#include <GumballMachine.h>
+#include "IState.h"
+#include "GumballMachine.h"
 class GumballsCoin: public IState {
 public:
 	GumballsCoin(GumballMachine* gbm):gbm_(gbm){}
@@ -19,18 +19,18 @@ public:
 	{
 		std::cout << "Added gumballs\n";
 		gbm_->addCount(count);
-		gbm_->setState(gbm_->getState(GumballMachine::GBMState::GUMBALLS_NO_COIN));
 	}
 
 	void insertCoin() override
 	{
-		std::cout << "Coin Inserted\n";
-		gbm_->setState(gbm_->getState(GumballMachine::GBMState::NO_GUMBALLS_COIN));
+		std::cout << "Coin already Inserted\n";
 	}
 
 	void turnHandle() override
 	{
-		std::cout << "Insert Coin\n";
+		std::cout << "Take gumball\n";
+		gbm_->updateState();
+		gbm_->setState(gbm_->getState(GumballMachine::GBMState::GUMBALLS_NO_COIN));
 	}
 private:
 	GumballMachine* gbm_;

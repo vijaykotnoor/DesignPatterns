@@ -10,8 +10,8 @@
 #include <iostream>
 class IState {
 public:
-	IState();
-	virtual ~IState();
+	IState(){}
+	virtual ~IState(){}
 	virtual void addGumballs(int count) = 0;
 	virtual void insertCoin() = 0;
 	virtual void turnHandle() = 0;
